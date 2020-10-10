@@ -1,19 +1,18 @@
 import React from "react"
-import Header from "../components/header";
-import { Link } from "gatsby";
+
+import Container from "../components/container";
+import Layout from "../components/layout";
 
 export default function Home() {
   return (
   <div>
-    <Header headerText="Caleb's Corner"/>
-    <div>
-      <Link to="/">Home</Link><br/>
-      <Link to="/about">about</Link>
-    </div>
+    <Layout>
+    <Container>
     <div>
       <h2>News</h2>
       <h2>bookmarks</h2>
     </div>
-
+    </Container>
+    </Layout>
   </div>);
 }
