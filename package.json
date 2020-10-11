@@ -15,9 +15,14 @@
     "deploy": "npm run build && mv public/index.html public/200.html && surge public"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.35",
+    "@mdx-js/react": "^1.6.18",
+    "acorn": "^6.4.2",
     "gatsby": "^2.24.67",
+    "gatsby-plugin-emotion": "^4.3.13",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "typescript": "^4.0.3"
   },
   "devDependencies": {
     "prettier": "2.1.2"
