@@ -1,21 +1,44 @@
 import React from "react"
-import { Link } from "gatsby";
+import { useStaticQuery, Link, graphql } from "gatsby";
+import { css } from "@emotion/core";
+import { Jumbotron } from "react-bootstrap";
+import NavBar from "../components/nav-bar"
 
-const ListLink = props => (
-    <li style={{ display: 'inline-block', marginRight: '1rem' }}>
-      <Link to={props.to} style={{textDecoration: 'none'}}>{props.children}</Link>
-    </li>
-  )
+export default function Banner(props){
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+);
+    return(
+        <div 
+            css={css`
+              backgroundColor: #99ffff;
+              border: none;
+              width: 100%;
 
-export default function Banner(props){return(
-<div style={{backgroundColor: '#99ffff', border: 'black solid 2px', padding: '1rem 0.5rem'}}>
-    <Link to="/" style={{ textShadow: 'none', backgroundImage: 'none', textDecoration: 'none' }}>
-        <h3 style={{ display: 'inline' }}>Caleb's Corner</h3>
-    </Link>
-    <ul style={{ listStyle: 'none', float: 'right' }}>
-        <ListLink to="/">Home</ListLink>
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
-    </ul>
-</div>
-);}
+            `}
+        >
+            <Link to="/" css={css`
+                textShadow: none;
+                backgroundImage: none;
+                textDecoration: none;
+
+            `}
+            >
+                <Jumbotron>
+                <h1 css={css`
+                    display: inline;
+                    textDecoration: none;
+                `}> {data.site.siteMetadata.title} </h1>
+                </Jumbotron>
+            </Link>
+            <span css={css`float: center;`}>{props.pageTitle}</span>
+        </div>
+    );}
