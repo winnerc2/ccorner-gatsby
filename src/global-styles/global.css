@@ -1,10 +1,10 @@
 #___gatsby{
     margin: 0 auto;
     font-family: 'Times New Roman', Times, serif;
-    background-color: antiquewhitea;
+    background-color: #f9f9f9;
 }
 
-.container {
+.global-container {
     margin: 3rem auto;
-    max-width: 730px;
+    max-width: 970px;
   }
