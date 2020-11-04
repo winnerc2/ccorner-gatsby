@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 // TODO Import the source directory paths from external file
+require("dotenv").config({
+  path: `.env.environment`,
+})
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -15,7 +19,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `Python Data`,
-        path: `E:/Users/User Name/Documents/a_code/a_job_prep/reactjs/gatsby/ccornerPython/ccornerData`,
+        path: process.env.PROJECT_PYTHON_DIR,
       },
     },
     `gatsby-transformer-remark`,
@@ -23,20 +27,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `E:/Users/User Name/Documents/a_code/a_job_prep/reactjs/gatsby/ccornerPython/ccornerData`,
+        path: process.env.PROJECT_PYTHON_DIR,
       },
     },
     {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
-          apiKey: "AIzaSyDYHyt5UdFJ3QgHRsrVox_nknN-ihUr0mY",
-          authDomain: "ccorner-4bca7.firebaseapp.com",
-          databaseURL: "https://ccorner-4bca7.firebaseio.com",
-          projectId: "ccorner-4bca7",
-          storageBucket: "ccorner-4bca7.appspot.com",
-          messagingSenderId: "884213770083",
-          appId: "1:884213770083:web:881dcd6b351ac9f958d556"
+          apiKey: process.env.FIREBASE_APIKEY,
+          authDomain: process.env.FIREBASE_AUTHDOMAIN,
+          databaseURL: process.env.FIREBASE_DATABASEURL,
+          projectId: process.env.FIREBASE_PROJECTID,
+          storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+          messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+          appId: process.env.FIREBASE_APPID
         }
       }
     }

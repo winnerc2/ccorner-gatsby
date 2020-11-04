@@ -6,11 +6,11 @@ export const getUser = () =>
 const setUser = user =>
   window.localStorage.setItem("gatsbyUser", JSON.stringify(user))
 export const handleLogin = ({ username, password }) => {
-  if (username === `john` && password === `pass`) {
+  if (username === `process.env.TEST_AUTH_USER` && password === `process.env.TEST_AUTH_PASS`) {
     return setUser({
-      username: `john`,
-      name: `Johnny`,
-      email: `johnny@example.org`,
+      username: `caleb`,
+      name: `Caleb`,
+      email: `nunyabusniess@example.org`,
     })
   }
   return false

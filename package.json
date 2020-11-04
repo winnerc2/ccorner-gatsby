@@ -22,6 +22,7 @@
     "acorn": "^6.4.2",
     "auth0-js": "^9.14.0",
     "bootstrap": "^4.5.3",
+    "dotenv": "^8.2.0",
     "firebase": "^8.0.0",
     "gatsby": "^2.24.67",
     "gatsby-plugin-emotion": "^4.3.13",
